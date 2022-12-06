@@ -16,15 +16,6 @@ export const searchUsers = async (text) => {
     q: text
   })
 
-  // const res = await fetch(`${GITHUB_URL}/search/users?${params}`, {
-  //   headers: {
-  //     Authorization : `token ${GITHUB_TOKEN}`,
-  //   }
-  // })
-
-  // const { items } = await res.json()
-  
-  // return items
 
   const res = await github.get(`/search/users?${params}`)
   return res.data.items
